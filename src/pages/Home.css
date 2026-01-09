@@ -207,14 +207,20 @@
 /* Video Section */
 .home__video {
     background: var(--color-cream);
+    padding-top: var(--space-8);
+    /* Reduced top padding */
+    padding-bottom: var(--space-8);
+    /* Reduced bottom padding */
 }
 
 .home__video-wrapper {
-    max-width: 900px;
+    max-width: 700px;
+    /* Reduced from 900px for more compact look */
     margin: 0 auto;
-    border-radius: var(--radius-2xl);
+    border-radius: var(--radius-xl);
+    /* Slightly tighter radius */
     overflow: hidden;
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-lg);
 }
 
 .home__video-player {

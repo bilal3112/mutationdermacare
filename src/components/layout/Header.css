@@ -42,18 +42,20 @@
 }
 
 .nav__logo-img {
-    height: 55px;
+    height: 70px;
+    /* Increased from 55px */
     width: auto;
     object-fit: contain;
-    max-width: 230px;
-    /* Ensure wide logo fits */
+    max-width: 280px;
+    /* Increased from 230px */
 }
 
 @media (min-width: 768px) {
     .nav__logo-img {
-        height: 70px;
-        /* Optimized for header height */
-        max-width: 280px;
+        height: 90px;
+        /* Increased from 70px */
+        max-width: 350px;
+        /* Increased from 280px */
     }
 }
 
@@ -144,14 +146,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    /* Larger touch target */
+    height: 48px;
     background: none;
     border: none;
     cursor: pointer;
     padding: var(--space-2);
-    gap: 5px;
+    gap: 6px;
+    /* Slightly more space */
     z-index: calc(var(--z-fixed) + 10);
+    border-radius: var(--radius-full);
+    /* Circular tap effect */
+    transition: background-color var(--transition-fast);
+}
+
+.nav__toggle:active {
+    background-color: rgba(45, 90, 61, 0.1);
 }
 
 @media (min-width: 1024px) {
@@ -216,20 +227,26 @@
 
 .mobile-menu__link {
     display: block;
-    padding: var(--space-4) 0;
+    padding: var(--space-5) 0;
+    /* More padding */
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
+    /* Larger text */
     font-weight: var(--font-medium);
     color: var(--color-text-primary);
     text-decoration: none;
-    border-bottom: 1px solid rgba(45, 90, 61, 0.1);
+    border-bottom: 1px solid rgba(45, 90, 61, 0.05);
+    /* Softer border */
     transition: all var(--transition-fast);
+    position: relative;
 }
 
 .mobile-menu__link:hover,
 .mobile-menu__link--active {
     color: var(--color-primary);
-    padding-left: var(--space-2);
+    padding-left: var(--space-4);
+    /* More indent on active */
+    background: linear-gradient(to right, rgba(45, 90, 61, 0.03), transparent);
 }
 
 .mobile-menu__link--active {

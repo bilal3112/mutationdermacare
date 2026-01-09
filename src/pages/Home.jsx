@@ -2,9 +2,12 @@ import HeroSection from '../components/sections/HeroSection';
 import FeaturedProducts from '../components/sections/FeaturedProducts';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import CTASection from '../components/sections/CTASection';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 import './Home.css';
 
 const Home = () => {
+    useScrollAnimation();
+
     return (
         <div className="home">
             <HeroSection />
@@ -13,7 +16,7 @@ const Home = () => {
             <section className="home__about section">
                 <div className="container">
                     <div className="home__about-content">
-                        <div className="home__about-text">
+                        <div className="home__about-text reveal">
                             <span className="subheading">About Mutation Dermacare</span>
                             <h2 className="heading-2">Trusted Expertise in Herbal Dermatology</h2>
                             <div className="divider divider-left"></div>
@@ -41,7 +44,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="home__about-visual">
+                        <div className="home__about-visual reveal-right">
                             <div className="home__about-card">
                                 <div className="home__about-card-icon">🌿</div>
                                 <div className="home__about-card-content">
@@ -57,14 +60,14 @@ const Home = () => {
             {/* Conditions Treated */}
             <section className="home__conditions section bg-beige">
                 <div className="container">
-                    <div className="section-header">
+                    <div className="section-header reveal">
                         <span className="subheading">Expert Treatment</span>
                         <h2 className="heading-2">Conditions We Treat</h2>
                         <div className="divider"></div>
                     </div>
 
                     <div className="home__conditions-grid">
-                        <div className="home__conditions-category">
+                        <div className="home__conditions-category reveal" style={{ transitionDelay: '0ms' }}>
                             <h3 className="home__conditions-title">
                                 <span className="home__conditions-icon">🌸</span>
                                 Skin Conditions
@@ -81,7 +84,7 @@ const Home = () => {
                             </ul>
                         </div>
 
-                        <div className="home__conditions-category">
+                        <div className="home__conditions-category reveal" style={{ transitionDelay: '100ms' }}>
                             <h3 className="home__conditions-title">
                                 <span className="home__conditions-icon">💇</span>
                                 Hair Problems
@@ -94,7 +97,7 @@ const Home = () => {
                             </ul>
                         </div>
 
-                        <div className="home__conditions-category">
+                        <div className="home__conditions-category reveal" style={{ transitionDelay: '200ms' }}>
                             <h3 className="home__conditions-title">
                                 <span className="home__conditions-icon">🛡️</span>
                                 Other Conditions
@@ -115,13 +118,13 @@ const Home = () => {
             {/* Video Showcase */}
             <section className="home__video section">
                 <div className="container">
-                    <div className="section-header">
+                    <div className="section-header reveal">
                         <span className="subheading">Watch Our Story</span>
                         <h2 className="heading-2">See Our Products in Action</h2>
                         <div className="divider"></div>
                     </div>
 
-                    <div className="home__video-wrapper">
+                    <div className="home__video-wrapper reveal">
                         <video
                             className="home__video-player"
                             controls

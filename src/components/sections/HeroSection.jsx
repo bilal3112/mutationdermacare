@@ -1,38 +1,41 @@
 import { Link } from 'react-router-dom';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 import './HeroSection.css';
 
 const HeroSection = () => {
+    useScrollAnimation();
+
     return (
         <section className="hero">
             <div className="hero__background">
                 <div className="hero__gradient"></div>
                 <div className="hero__pattern"></div>
                 {/* Decorative elements */}
-                <div className="hero__decoration hero__decoration--1"></div>
-                <div className="hero__decoration hero__decoration--2"></div>
-                <div className="hero__decoration hero__decoration--3"></div>
+                <div className="hero__decoration hero__decoration--1Reveal reveal"></div>
+                <div className="hero__decoration hero__decoration--2Reveal reveal"></div>
+                <div className="hero__decoration hero__decoration--3Reveal reveal"></div>
             </div>
 
             <div className="container">
                 <div className="hero__content">
                     <div className="hero__text">
-                        <span className="hero__tagline-label">
+                        <span className="hero__tagline-label reveal">
                             <span className="hero__tagline-accent">✦</span>
                             Premium Herbal Dermatology
                         </span>
 
-                        <h1 className="hero__title">
+                        <h1 className="hero__title reveal">
                             Luxury in <br />
                             <span className="hero__title-accent">Every Touch</span>
                         </h1>
 
-                        <p className="hero__description">
+                        <p className="hero__description reveal">
                             Experience the finest Ayurvedic & Herbal Skin and Hair Care solutions,
                             backed by <strong>15+ years</strong> of dermatology expertise.
                             100% steroid-free, safe for all ages.
                         </p>
 
-                        <div className="hero__cta-group">
+                        <div className="hero__cta-group reveal">
                             <Link to="/contact" className="btn btn-gold btn-lg">
                                 Book Consultation
                             </Link>
@@ -42,7 +45,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Trust Indicators */}
-                        <div className="hero__trust">
+                        <div className="hero__trust reveal">
                             <div className="hero__trust-item">
                                 <span className="hero__trust-icon">🏆</span>
                                 <span className="hero__trust-text">15+ Years Experience</span>
@@ -58,7 +61,7 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    <div className="hero__visual">
+                    <div className="hero__visual reveal-right">
                         <div className="hero__visual-wrapper">
                             <div className="hero__visual-ring hero__visual-ring--outer"></div>
                             <div className="hero__visual-ring hero__visual-ring--inner"></div>
@@ -79,7 +82,7 @@ const HeroSection = () => {
             </div>
 
             {/* Scroll indicator */}
-            <div className="hero__scroll">
+            <div className="hero__scroll reveal">
                 <span>Scroll to explore</span>
                 <div className="hero__scroll-line"></div>
             </div>

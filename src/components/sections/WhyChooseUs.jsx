@@ -1,3 +1,4 @@
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 import './WhyChooseUs.css';
 
 const benefits = [
@@ -34,10 +35,12 @@ const benefits = [
 ];
 
 const WhyChooseUs = () => {
+    useScrollAnimation();
+
     return (
         <section className="why-choose section">
             <div className="container">
-                <div className="section-header">
+                <div className="section-header reveal">
                     <span className="subheading">The Mutation Difference</span>
                     <h2 className="heading-2">Why Choose Us</h2>
                     <div className="divider"></div>
@@ -50,8 +53,11 @@ const WhyChooseUs = () => {
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
-                            className="why-choose__card"
-                            style={{ animationDelay: `${index * 100}ms` }}
+                            className="why-choose__card reveal"
+                            style={{
+                                animationDelay: `${index * 100}ms`,
+                                transitionDelay: `${index * 100}ms`
+                            }}
                         >
                             <div className="why-choose__icon">
                                 <span>{benefit.icon}</span>
@@ -63,7 +69,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Stats Bar */}
-                <div className="why-choose__stats">
+                <div className="why-choose__stats reveal">
                     <div className="why-choose__stat">
                         <span className="why-choose__stat-number">15+</span>
                         <span className="why-choose__stat-label">Years Experience</span>

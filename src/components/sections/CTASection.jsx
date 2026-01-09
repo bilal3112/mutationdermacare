@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 import './CTASection.css';
 
 const CTASection = () => {
+    useScrollAnimation();
+
     return (
         <section className="cta-section">
             <div className="cta-section__background">
@@ -11,7 +14,7 @@ const CTASection = () => {
             </div>
 
             <div className="container">
-                <div className="cta-section__content">
+                <div className="cta-section__content reveal">
                     <span className="cta-section__label">Book Your Consultation Today</span>
                     <h2 className="cta-section__title">
                         Ready for <span className="cta-section__title-accent">Healthy Skin?</span>

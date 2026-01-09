@@ -80,12 +80,7 @@ const Footer = () => {
                                     <a href="https://wa.me/919921269023?text=Hello!%20I%20would%20like%20to%20inquire%20about%20Mutation%20Dermacare%20products." target="_blank" rel="noopener noreferrer" className="footer__link">WhatsApp Us</a>
                                 </div>
                             </li>
-                            <li className="footer__contact-item">
-                                <span className="footer__contact-icon">✉️</span>
-                                <div>
-                                    <a href="mailto:info@mutationdermacare.com" className="footer__link">info@mutationdermacare.com</a>
-                                </div>
-                            </li>
+                            {/* Email removed as per request */}
                         </ul>
                     </div>
                 </div>
@@ -98,6 +93,9 @@ const Footer = () => {
                         </p>
                         <p className="footer__tagline-sm">
                             <span className="footer__tagline-accent">15+ Years</span> of Dermatology Excellence
+                        </p>
+                        <p className="footer__crafted-by" style={{ marginTop: '10px', fontSize: '0.8rem', opacity: '0.8' }}>
+                            Crafted by <a href="https://www.eriasoftware.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>Eria Software</a>
                         </p>
                     </div>
                 </div>
