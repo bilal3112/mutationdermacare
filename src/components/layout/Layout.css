@@ -1,0 +1,22 @@
+/* ============================================
+   LAYOUT STYLES
+   ============================================ */
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding-top: 70px;
+    /* Header height on mobile */
+}
+
+@media (min-width: 1024px) {
+    .main {
+        padding-top: 80px;
+        /* Header height on desktop */
+    }
+}

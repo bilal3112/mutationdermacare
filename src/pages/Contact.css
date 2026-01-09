@@ -1,0 +1,269 @@
+/* ============================================
+   CONTACT PAGE STYLES - Mobile First
+   ============================================ */
+
+/* Hero */
+.contact-page__hero {
+    position: relative;
+    padding: var(--space-20) 0 var(--space-12);
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .contact-page__hero {
+        padding: var(--space-24) 0 var(--space-16);
+    }
+}
+
+.contact-page__hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: radial-gradient(var(--color-white) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.contact-page__hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-page__hero-label {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.contact-page__hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .contact-page__hero-title {
+        font-size: var(--text-5xl);
+    }
+}
+
+.contact-page__hero-title span {
+    color: var(--color-gold);
+}
+
+.contact-page__hero-description {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 768px) {
+    .contact-page__hero-description {
+        font-size: var(--text-lg);
+    }
+}
+
+/* Main Content */
+.contact-page__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+    .contact-page__content {
+        grid-template-columns: 1fr 1.2fr;
+        gap: var(--space-16);
+    }
+}
+
+/* Contact Info */
+.contact-page__info h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.contact-page__info-text {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+.contact-page__info-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.contact-page__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-beige);
+    border-radius: var(--radius-lg);
+}
+
+.contact-page__info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.contact-page__info-content h3 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.contact-page__info-content a,
+.contact-page__info-content p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+}
+
+.contact-page__info-content a:hover {
+    color: var(--color-primary);
+}
+
+.contact-page__whatsapp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+/* Contact Form */
+.contact-page__form-wrapper {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .contact-page__form-wrapper {
+        padding: var(--space-10);
+    }
+}
+
+.contact-page__form-wrapper h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-6);
+}
+
+.contact-page__form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+    .contact-page__form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.contact-page__submit {
+    width: 100%;
+    margin-top: var(--space-4);
+}
+
+.contact-page__submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.contact-page__success {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    background: rgba(45, 90, 61, 0.08);
+    border-radius: var(--radius-lg);
+}
+
+.contact-page__success span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+/* Clinic Section */
+.contact-page__clinic-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-page__clinic-card {
+    text-align: center;
+    padding: var(--space-8);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-page__clinic-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.contact-page__clinic-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.contact-page__clinic-card p {
+    font-size: var(--text-lg);
+    color: var(--color-gold);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+}
+
+.contact-page__clinic-note {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+}

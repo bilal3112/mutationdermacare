@@ -1,0 +1,276 @@
+/* ============================================
+   ABOUT PAGE STYLES - Mobile First
+   ============================================ */
+
+/* Hero */
+.about__hero {
+    position: relative;
+    padding: var(--space-20) 0 var(--space-16);
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .about__hero {
+        padding: var(--space-24) 0 var(--space-20);
+    }
+}
+
+.about__hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: radial-gradient(var(--color-white) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.about__hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about__hero-label {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.about__hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-white);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+    .about__hero-title {
+        font-size: var(--text-5xl);
+    }
+}
+
+.about__hero-title span {
+    color: var(--color-gold);
+}
+
+.about__hero-description {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 768px) {
+    .about__hero-description {
+        font-size: var(--text-lg);
+    }
+}
+
+/* Story Section */
+.about__story-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+    .about__story-content {
+        grid-template-columns: 1.2fr 1fr;
+        gap: var(--space-16);
+        align-items: start;
+    }
+}
+
+.about__story-text .subheading {
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+.about__story-text .heading-2 {
+    margin-bottom: var(--space-4);
+}
+
+.about__story-text .divider-left {
+    margin-bottom: var(--space-6);
+}
+
+.about__story-text p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+}
+
+/* Feature Cards */
+.about__story-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+}
+
+.about__feature-card {
+    padding: var(--space-5);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+    .about__feature-card {
+        padding: var(--space-6);
+    }
+}
+
+.about__feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.about__feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-3);
+}
+
+.about__feature-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.about__feature-card p {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+    .about__feature-card p {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Difference Section */
+.about__difference-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .about__difference-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.about__difference-card {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-base);
+}
+
+@media (min-width: 768px) {
+    .about__difference-card {
+        padding: var(--space-8);
+    }
+}
+
+.about__difference-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.about__difference-number {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-beige);
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, var(--color-gold), var(--color-sage));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about__difference-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.about__difference-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* Expertise Section */
+.about__expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .about__expertise-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+    }
+}
+
+.about__expertise-category {
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 768px) {
+    .about__expertise-category {
+        padding: var(--space-8);
+    }
+}
+
+.about__expertise-category h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-gold);
+}
+
+.about__expertise-category ul {
+    list-style: none;
+}
+
+.about__expertise-category li {
+    position: relative;
+    padding: var(--space-2) 0 var(--space-2) var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.about__expertise-category li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-sage);
+    font-weight: var(--font-bold);
+}

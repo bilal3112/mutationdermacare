@@ -1,0 +1,100 @@
+/* ============================================
+   SERVICE CARD STYLES - Mobile First
+   ============================================ */
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    height: 100%;
+    animation: fadeInUp var(--transition-slow) ease forwards;
+    opacity: 0;
+}
+
+@media (min-width: 768px) {
+    .service-card {
+        padding: var(--space-8);
+    }
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Icon */
+.service-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--space-5);
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--color-beige), rgba(135, 168, 120, 0.15));
+    border-radius: var(--radius-xl);
+    transition: transform var(--transition-base);
+}
+
+@media (min-width: 768px) {
+    .service-card__icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.25rem;
+    }
+}
+
+.service-card:hover .service-card__icon {
+    transform: scale(1.08);
+}
+
+/* Name */
+.service-card__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+}
+
+@media (min-width: 768px) {
+    .service-card__name {
+        font-size: var(--text-xl);
+    }
+}
+
+/* Description */
+.service-card__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+}
+
+/* Features */
+.service-card__features {
+    list-style: none;
+    text-align: left;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(45, 90, 61, 0.08);
+}
+
+.service-card__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.service-card__feature-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
