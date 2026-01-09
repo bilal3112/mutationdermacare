@@ -4,7 +4,7 @@
 
 .cta-section {
     position: relative;
-    padding: var(--space-16) 0;
+    padding: var(--space-20) 0 calc(var(--space-20) + 60px);
     background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
     overflow: hidden;
 }

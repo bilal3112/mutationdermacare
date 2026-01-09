@@ -9,7 +9,7 @@
 .featured-products__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: var(--space-8);
     margin-bottom: var(--space-10);
 }
 

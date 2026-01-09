@@ -64,11 +64,11 @@
   --font-semibold: 600;
   --font-bold: 700;
 
-  /* Line Heights */
+  /* Line Heights - Comfortable for readability */
   --leading-tight: 1.25;
   --leading-snug: 1.375;
   --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-relaxed: 1.65;
   --leading-loose: 2;
 
   /* Letter Spacing */
@@ -315,21 +315,21 @@ h6 {
 }
 
 .section {
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-12);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-top: var(--space-16);
-    padding-bottom: var(--space-16);
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
   }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--space-20);
-    padding-bottom: var(--space-20);
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
   }
 }
 
@@ -668,6 +668,8 @@ h6 {
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
+  min-height: 44px;
+  /* WCAG touch target minimum */
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
@@ -682,6 +684,7 @@ h6 {
 @media (min-width: 768px) {
   .btn {
     padding: var(--space-4) var(--space-8);
+    min-height: 48px;
     font-size: var(--text-base);
   }
 }

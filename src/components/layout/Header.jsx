@@ -116,6 +116,14 @@ const Header = () => {
 
             {/* Overlay */}
             {isMenuOpen && <div className="mobile-menu__overlay" onClick={closeMenu}></div>}
+
+            {/* Sticky Mobile CTA - Always visible on mobile */}
+            <div className="mobile-sticky-cta">
+                <Link to="/contact" className="mobile-sticky-cta__btn btn btn-gold">
+                    <span className="mobile-sticky-cta__icon">📅</span>
+                    Book Consultation
+                </Link>
+            </div>
         </header>
     );
 };
