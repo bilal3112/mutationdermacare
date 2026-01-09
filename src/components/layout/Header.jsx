@@ -1,113 +1,128 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { 
+  Phone, 
+  Search, 
+  User, 
+  Heart, 
+  Repeat, 
+  ShoppingCart, 
+  Menu, 
+  X,
+  ChevronDown
+} from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsSticky(window.scrollY > 200);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
     return (
-        <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
-            <div className="container">
-                <nav className="nav">
+        <header className="header-wrapper">
+            {/* Top Bar */}
+            <div className="top-bar">
+                <div className="container top-bar__content">
+                    <div className="top-bar__left">
+                        <a href="tel:+911204512000" className="top-bar__link">
+                            <Phone size={14} /> <span>+91-120-4512000</span>
+                        </a>
+                    </div>
+                    <div className="top-bar__right">
+                        <span>Welcome to Mutation Dermacare!</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Main Header */}
+            <div className="main-header">
+                <div className="container main-header__content">
                     {/* Logo */}
-                    <Link to="/" className="nav__logo" onClick={closeMenu}>
-                        <img src="/assets/headerlogo.svg" alt="Mutation Dermacare Logo" className="nav__logo-img" />
+                    <Link to="/" className="main-header__logo" onClick={closeMenu}>
+                        <img src="/assets/headerlogo.svg" alt="Mutation Dermacare" />
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <ul className="nav__links">
-                        <li>
-                            <NavLink to="/" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/about" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-                                About
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/products" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-                                Products
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/services" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-                                Services
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav__link nav__link--active' : 'nav__link'}>
-                                Contact
-                            </NavLink>
-                        </li>
-                    </ul>
+                    {/* Search Bar */}
+                    <div className="main-header__search">
+                        <form className="search-form">
+                            <input type="text" placeholder="Search for products..." />
+                            <button type="submit">
+                                <Search size={20} />
+                            </button>
+                        </form>
+                    </div>
 
+                    {/* Actions */}
+                    <div className="main-header__actions">
+                        <Link to="/login" className="action-item">
+                            <User size={24} />
+                            <span>Login / Register</span>
+                        </Link>
+                        <Link to="/wishlist" className="action-item desktop-only">
+                            <Heart size={24} />
+                        </Link>
+                         <Link to="/compare" className="action-item desktop-only">
+                            <Repeat size={24} />
+                        </Link>
+                        <Link to="/cart" className="action-item">
+                            <div className="cart-icon">
+                                <ShoppingCart size={24} />
+                                <span className="cart-count">0</span>
+                            </div>
+                            <div className="cart-info desktop-only">
+                                <span className="cart-total">₹0.00</span>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* Navigation Bar */}
+            <div className={`nav-bar ${isSticky ? 'sticky' : ''}`}>
+                <div className="container nav-bar__content">
                     {/* Mobile Menu Toggle */}
-                    <button
-                        className={`nav__toggle ${isMenuOpen ? 'nav__toggle--open' : ''}`}
-                        onClick={toggleMenu}
-                        aria-label="Toggle navigation menu"
-                        aria-expanded={isMenuOpen}
-                    >
-                        <span className="nav__toggle-bar"></span>
-                        <span className="nav__toggle-bar"></span>
-                        <span className="nav__toggle-bar"></span>
+                    <button className="mobile-toggle" onClick={toggleMenu}>
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        <span>Menu</span>
                     </button>
+
+                    {/* Desktop Menu */}
+                    <nav className="desktop-nav">
+                        <ul className="nav-list">
+                            <li><NavLink to="/products" className="nav-link">Homeopathic Products <ChevronDown size={14}/></NavLink></li>
+                            <li><NavLink to="/diseases" className="nav-link">Diseases <ChevronDown size={14}/></NavLink></li>
+                            <li><NavLink to="/personal-care" className="nav-link">Personal Care <ChevronDown size={14}/></NavLink></li>
+                            <li><NavLink to="/about" className="nav-link">About Us</NavLink></li>
+                            <li><NavLink to="/media" className="nav-link">Media</NavLink></li>
+                            <li><NavLink to="/catalogue" className="nav-link">Download Catalogue</NavLink></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+                <nav className="mobile-nav">
+                     <ul className="mobile-nav-list">
+                        <li><Link to="/products" onClick={closeMenu}>Homeopathic Products</Link></li>
+                        <li><Link to="/diseases" onClick={closeMenu}>Diseases</Link></li>
+                        <li><Link to="/personal-care" onClick={closeMenu}>Personal Care</Link></li>
+                        <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+                        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+                    </ul>
                 </nav>
             </div>
-
-            {/* Mobile Menu */}
-            <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu--open' : ''}`}>
-                <ul className="mobile-menu__links">
-                    <li>
-                        <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? 'mobile-menu__link mobile-menu__link--active' : 'mobile-menu__link'}>
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about" onClick={closeMenu} className={({ isActive }) => isActive ? 'mobile-menu__link mobile-menu__link--active' : 'mobile-menu__link'}>
-                            About Us
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/products" onClick={closeMenu} className={({ isActive }) => isActive ? 'mobile-menu__link mobile-menu__link--active' : 'mobile-menu__link'}>
-                            Products
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/services" onClick={closeMenu} className={({ isActive }) => isActive ? 'mobile-menu__link mobile-menu__link--active' : 'mobile-menu__link'}>
-                            Services
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => isActive ? 'mobile-menu__link mobile-menu__link--active' : 'mobile-menu__link'}>
-                            Contact
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-
-            {/* Overlay */}
-            {isMenuOpen && <div className="mobile-menu__overlay" onClick={closeMenu}></div>}
+            {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}
         </header>
     );
 };
