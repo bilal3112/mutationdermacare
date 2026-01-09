@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="footer__brand">
                         <Link to="/" className="footer__logo">
-                            <img src="/assets/logo.png" alt="Mutation Dermacare Logo" className="footer__logo-img" />
+                            <img src="/assets/headerlogo.svg" alt="Mutation Dermacare Logo" className="footer__logo-img" />
                         </Link>
                         <p className="footer__tagline">Luxury in Every Touch</p>
                         <p className="footer__description">

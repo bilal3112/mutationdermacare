@@ -42,14 +42,18 @@
 }
 
 .nav__logo-img {
-    height: 32px;
+    height: 55px;
     width: auto;
     object-fit: contain;
+    max-width: 230px;
+    /* Ensure wide logo fits */
 }
 
 @media (min-width: 768px) {
     .nav__logo-img {
-        height: 48px;
+        height: 70px;
+        /* Optimized for header height */
+        max-width: 280px;
     }
 }
 

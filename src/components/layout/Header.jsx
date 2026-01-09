@@ -28,9 +28,8 @@ const Header = () => {
             <div className="container">
                 <nav className="nav">
                     {/* Logo */}
-                    {/* Logo */}
                     <Link to="/" className="nav__logo" onClick={closeMenu}>
-                        <img src="/assets/logo.png" alt="Mutation Dermacare Logo" className="nav__logo-img" />
+                        <img src="/assets/headerlogo.svg" alt="Mutation Dermacare Logo" className="nav__logo-img" />
                     </Link>
 
                     {/* Desktop Navigation */}
