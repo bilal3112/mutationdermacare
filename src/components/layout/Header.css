@@ -42,20 +42,20 @@
 }
 
 .nav__logo-img {
-    height: 70px;
-    /* Increased from 55px */
+    height: 85px;
+    /* Increased from 70px */
     width: auto;
     object-fit: contain;
-    max-width: 280px;
-    /* Increased from 230px */
+    max-width: 320px;
+    /* Increased from 280px */
 }
 
 @media (min-width: 768px) {
     .nav__logo-img {
-        height: 90px;
-        /* Increased from 70px */
-        max-width: 350px;
-        /* Increased from 280px */
+        height: 110px;
+        /* Increased from 90px */
+        max-width: 400px;
+        /* Increased from 350px */
     }
 }
 
