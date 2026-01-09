@@ -1,24 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yantramanav:wght@300;400;500;700;900&display=swap');
 
 :root {
-  /* Brand Colors */
+  /* Brand Colors - Verified from bjainpharma.com */
   --primary-color: #C60808;
-  --secondary-color: #000000;
-  
+  /* Deep Red for Top Bar/Accents */
+  --primary-hover: #a50606;
+
   /* Text Colors */
   --text-primary: #2D2A2A;
+  /* Main Headings */
   --text-secondary: #777777;
+  /* Body Text */
   --text-light: #FFFFFF;
 
   /* Background Colors */
   --bg-primary: #FFFFFF;
   --bg-secondary: #F9F9F9;
+  /* Subtle off-white for alternate sections */
   --bg-footer: #000000;
   --bg-top-bar: #C60808;
 
   /* Fonts */
   --font-heading: 'Yantramanav', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --container-width: 1240px;
+  /* Slightly wider to match modern layouts */
 }
 
 * {
@@ -37,7 +45,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-primary);
   font-weight: 700;
@@ -52,18 +65,44 @@ a {
 }
 
 /* Global Button Styles */
-button {
+button,
+.btn {
   cursor: pointer;
   border: none;
   outline: none;
   font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
 /* Utilities */
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
 }
 
 img {

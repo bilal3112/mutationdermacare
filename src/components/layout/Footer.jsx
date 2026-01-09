@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail, Search } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -43,14 +43,12 @@ const Footer = () => {
                         <h4 className="footer__heading">Information</h4>
                         <ul className="footer__links">
                             <li><Link to="/about">About Us</Link></li>
-                            <li><Link to="/delivery">Delivery Information</Link></li>
                             <li><Link to="/privacy">Privacy Policy</Link></li>
                             <li><Link to="/terms">Terms & Conditions</Link></li>
-                            <li><Link to="/blog">Our Blog</Link></li>
                         </ul>
                     </div>
 
-                    {/* Column 3: Search (Replacing actual Search with Categories for usefulness) */}
+                    {/* Column 3: Our Products */}
                     <div className="footer__column">
                         <h4 className="footer__heading">Our Products</h4>
                         <ul className="footer__links">
@@ -61,25 +59,13 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Column 4: Customer Service */}
+                    {/* Column 4: Quick Links */}
                     <div className="footer__column">
-                        <h4 className="footer__heading">Customer Service</h4>
+                        <h4 className="footer__heading">Quick Links</h4>
                         <ul className="footer__links">
                             <li><Link to="/contact">Contact Us</Link></li>
-                            <li><Link to="/returns">Returns</Link></li>
-                            <li><Link to="/sitemap">Site Map</Link></li>
-                            <li><Link to="/careers">Careers</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 5: My Account */}
-                    <div className="footer__column">
-                        <h4 className="footer__heading">My Account</h4>
-                        <ul className="footer__links">
-                            <li><Link to="/account">My Account</Link></li>
-                            <li><Link to="/orders">Order History</Link></li>
-                            <li><Link to="/wishlist">Wish List</Link></li>
-                            <li><Link to="/newsletter">Newsletter</Link></li>
+                            <li><Link to="/services">Our Services</Link></li>
+                            <li><Link to="/products">All Products</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -89,12 +75,9 @@ const Footer = () => {
             <div className="footer__bottom">
                 <div className="container footer__bottom-content">
                     <p className="copyright">© {currentYear} Mutation DermaCare. All Rights Reserved.</p>
-                    <div className="payment-methods">
-                        {/* Placeholder for payment icons */}
-                        <div className="payment-icon">VISA</div>
-                        <div className="payment-icon">MasterCard</div>
-                        <div className="payment-icon">UPI</div>
-                    </div>
+                    <p className="crafted-by">
+                        Crafted by <a href="https://www.eriasoftware.com" target="_blank" rel="noopener noreferrer">Eria Software</a>
+                    </p>
                 </div>
             </div>
         </footer>

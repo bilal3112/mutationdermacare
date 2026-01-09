@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { 
-  Phone, 
-  Search, 
-  User, 
-  Heart, 
-  Repeat, 
-  ShoppingCart, 
-  Menu, 
-  X,
-  ChevronDown
+import {
+    Menu,
+    X,
+    ChevronDown,
+    Facebook,
+    Twitter,
+    Instagram,
+    Linkedin
 } from 'lucide-react';
 import './Header.css';
 
@@ -30,59 +28,42 @@ const Header = () => {
 
     return (
         <header className="header-wrapper">
-            {/* Top Bar */}
-            <div className="top-bar">
-                <div className="container top-bar__content">
-                    <div className="top-bar__left">
-                        <a href="tel:+911204512000" className="top-bar__link">
-                            <Phone size={14} /> <span>+91-120-4512000</span>
+            {/* Top Promo Bar */}
+            <div className="promo-bar">
+                <div className="container promo-bar__content">
+                    <span className="promo-bar__text">
+                        Free Consultation on All Skin & Hair Concerns | 100% Ayurvedic & Herbal Solutions
+                    </span>
+                    <div className="promo-bar__socials">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <Facebook size={14} />
                         </a>
-                    </div>
-                    <div className="top-bar__right">
-                        <span>Welcome to Mutation Dermacare!</span>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <Twitter size={14} />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <Instagram size={14} />
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <Linkedin size={14} />
+                        </a>
                     </div>
                 </div>
             </div>
 
-            {/* Main Header */}
+            {/* Main Header with Logo */}
             <div className="main-header">
                 <div className="container main-header__content">
-                    {/* Logo */}
                     <Link to="/" className="main-header__logo" onClick={closeMenu}>
                         <img src="/assets/headerlogo.svg" alt="Mutation Dermacare" />
                     </Link>
 
-                    {/* Search Bar */}
-                    <div className="main-header__search">
-                        <form className="search-form">
-                            <input type="text" placeholder="Search for products..." />
-                            <button type="submit">
-                                <Search size={20} />
-                            </button>
-                        </form>
-                    </div>
-
-                    {/* Actions */}
+                    {/* Header Right Actions */}
                     <div className="main-header__actions">
-                        <Link to="/login" className="action-item">
-                            <User size={24} />
-                            <span>Login / Register</span>
-                        </Link>
-                        <Link to="/wishlist" className="action-item desktop-only">
-                            <Heart size={24} />
-                        </Link>
-                         <Link to="/compare" className="action-item desktop-only">
-                            <Repeat size={24} />
-                        </Link>
-                        <Link to="/cart" className="action-item">
-                            <div className="cart-icon">
-                                <ShoppingCart size={24} />
-                                <span className="cart-count">0</span>
-                            </div>
-                            <div className="cart-info desktop-only">
-                                <span className="cart-total">₹0.00</span>
-                            </div>
-                        </Link>
+                        <a href="tel:+911234567890" className="header-contact">
+                            <span className="header-contact__label">Call Us:</span>
+                            <span className="header-contact__number">+91-123-456-7890</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -91,7 +72,7 @@ const Header = () => {
             <div className={`nav-bar ${isSticky ? 'sticky' : ''}`}>
                 <div className="container nav-bar__content">
                     {/* Mobile Menu Toggle */}
-                    <button className="mobile-toggle" onClick={toggleMenu}>
+                    <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle menu">
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         <span>Menu</span>
                     </button>
@@ -99,27 +80,52 @@ const Header = () => {
                     {/* Desktop Menu */}
                     <nav className="desktop-nav">
                         <ul className="nav-list">
-                            <li><NavLink to="/products" className="nav-link">Homeopathic Products <ChevronDown size={14}/></NavLink></li>
-                            <li><NavLink to="/diseases" className="nav-link">Diseases <ChevronDown size={14}/></NavLink></li>
-                            <li><NavLink to="/personal-care" className="nav-link">Personal Care <ChevronDown size={14}/></NavLink></li>
+                            <li><NavLink to="/" className="nav-link">Home</NavLink></li>
+                            <li className="nav-item-dropdown">
+                                <NavLink to="/products" className="nav-link">
+                                    Products <ChevronDown size={14} />
+                                </NavLink>
+                            </li>
+                            <li className="nav-item-dropdown">
+                                <NavLink to="/treatments" className="nav-link">
+                                    Treatments <ChevronDown size={14} />
+                                </NavLink>
+                            </li>
                             <li><NavLink to="/about" className="nav-link">About Us</NavLink></li>
                             <li><NavLink to="/media" className="nav-link">Media</NavLink></li>
-                            <li><NavLink to="/catalogue" className="nav-link">Download Catalogue</NavLink></li>
+                            <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
                         </ul>
                     </nav>
+
+                    {/* CTA Button */}
+                    <Link to="/consultation" className="nav-cta">
+                        Book Consultation
+                    </Link>
                 </div>
             </div>
 
             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+                <div className="mobile-menu__header">
+                    <Link to="/" className="mobile-menu__logo" onClick={closeMenu}>
+                        <img src="/assets/headerlogo.svg" alt="Mutation Dermacare" />
+                    </Link>
+                    <button className="mobile-menu__close" onClick={closeMenu} aria-label="Close menu">
+                        <X size={24} />
+                    </button>
+                </div>
                 <nav className="mobile-nav">
-                     <ul className="mobile-nav-list">
-                        <li><Link to="/products" onClick={closeMenu}>Homeopathic Products</Link></li>
-                        <li><Link to="/diseases" onClick={closeMenu}>Diseases</Link></li>
-                        <li><Link to="/personal-care" onClick={closeMenu}>Personal Care</Link></li>
+                    <ul className="mobile-nav-list">
+                        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                        <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
+                        <li><Link to="/treatments" onClick={closeMenu}>Treatments</Link></li>
                         <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+                        <li><Link to="/media" onClick={closeMenu}>Media</Link></li>
                         <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
                     </ul>
+                    <Link to="/consultation" className="mobile-cta" onClick={closeMenu}>
+                        Book Consultation
+                    </Link>
                 </nav>
             </div>
             {isMenuOpen && <div className="overlay" onClick={closeMenu}></div>}

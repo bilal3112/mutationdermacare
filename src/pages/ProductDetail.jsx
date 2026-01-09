@@ -125,10 +125,6 @@ const ProductDetail = () => {
 
                             {/* CTA */}
                             <div className="product-detail__cta">
-                                <div className="product-detail__cta-notice">
-                                    <span className="product-detail__cta-icon">🛒</span>
-                                    <span>Online ordering coming soon</span>
-                                </div>
                                 <Link to="/contact" className="btn btn-gold btn-lg">
                                     Enquire About This Product
                                 </Link>
