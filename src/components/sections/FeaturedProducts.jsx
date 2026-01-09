@@ -10,6 +10,11 @@ const FeaturedProducts = () => {
 
     return (
         <section className="featured-products section">
+            {/* Floating Decorations */}
+            <span className="featured-products__decor featured-products__decor--1">🌿</span>
+            <span className="featured-products__decor featured-products__decor--2">✨</span>
+            <span className="featured-products__decor featured-products__decor--3">🍃</span>
+
             <div className="container">
                 <div className="section-header reveal">
                     <span className="subheading">Premium Herbal Solutions</span>
@@ -47,3 +52,4 @@ const FeaturedProducts = () => {
 };
 
 export default FeaturedProducts;
+

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 const ProductCard = ({ product, showDetails = true }) => {
-    const { id, name, subtitle, category, benefits, image } = product;
+    const { id, name, subtitle, category, benefits, image, featured } = product;
     const [imageError, setImageError] = useState(false);
 
     // Get category display name
@@ -39,6 +39,7 @@ const ProductCard = ({ product, showDetails = true }) => {
                     )}
                 </div>
                 <span className="product-card__category">{getCategoryLabel(category)}</span>
+                {featured && <span className="product-card__featured-badge">Featured</span>}
             </div>
 
             <div className="product-card__content">
@@ -73,3 +74,4 @@ const ProductCard = ({ product, showDetails = true }) => {
 };
 
 export default ProductCard;
+

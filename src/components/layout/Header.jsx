@@ -61,11 +61,6 @@ const Header = () => {
                         </li>
                     </ul>
 
-                    {/* CTA Button - Desktop */}
-                    <Link to="/contact" className="nav__cta btn btn-gold">
-                        Book Consultation
-                    </Link>
-
                     {/* Mobile Menu Toggle */}
                     <button
                         className={`nav__toggle ${isMenuOpen ? 'nav__toggle--open' : ''}`}
@@ -109,21 +104,10 @@ const Header = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <Link to="/contact" onClick={closeMenu} className="mobile-menu__cta btn btn-gold btn-lg">
-                    Book Consultation
-                </Link>
             </div>
 
             {/* Overlay */}
             {isMenuOpen && <div className="mobile-menu__overlay" onClick={closeMenu}></div>}
-
-            {/* Sticky Mobile CTA - Always visible on mobile */}
-            <div className="mobile-sticky-cta">
-                <Link to="/contact" className="mobile-sticky-cta__btn btn btn-gold">
-                    <span className="mobile-sticky-cta__icon">📅</span>
-                    Book Consultation
-                </Link>
-            </div>
         </header>
     );
 };

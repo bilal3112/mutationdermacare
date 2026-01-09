@@ -36,10 +36,7 @@ const HeroSection = () => {
                         </p>
 
                         <div className="hero__cta-group reveal">
-                            <Link to="/contact" className="btn btn-gold btn-lg">
-                                Book Consultation
-                            </Link>
-                            <Link to="/products" className="btn btn-secondary btn-lg">
+                            <Link to="/products" className="btn btn-gold btn-lg">
                                 Explore Products
                             </Link>
                         </div>
